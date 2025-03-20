@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 
 
-public class TripCostCalculatorTest {
+public class ShoppingCartCalculatorTest {
     @Test
     void testCalculateCost() {
         Assertions.assertEquals(40.0, ShoppingCartCalculator.calculateTotalCost(new HashMap<Double, Integer>(){{
