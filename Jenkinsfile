@@ -1,32 +1,36 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven3'
+        jdk 'java_Home'
+    }
      environment {
             // Define Docker Hub credentials ID
             DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
             // Define Docker Hub repository name
-            DOCKERHUB_REPO = 'amirdirin/week7_inclass_test1'
+            DOCKERHUB_REPO = 'runzhouzhu/repo1'
             // Define Docker image tag
-            DOCKER_IMAGE_TAG = 'latest_v1'
+            DOCKER_IMAGE_TAG = 'week1'
         }
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/ADirin/SEP1_Week7_Spring2025_Inclass_solution.git'
+                git branch:'week1', url:'https://github.com/RunzhouZHu/sep2_inclass_assignments.git'
             }
         }
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         stage('Code Coverage') {
             steps {
-                sh 'mvn jacoco:report'
+                bat 'mvn jacoco:report'
             }
         }
         stage('Publish Test Results') {
