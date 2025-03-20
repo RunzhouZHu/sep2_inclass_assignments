@@ -8,7 +8,7 @@ pipeline {
             // Define Docker Hub credentials ID
             DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
             // Define Docker Hub repository name
-            DOCKERHUB_REPO = 'runzhouzhu/repo1'
+            DOCKERHUB_REPO = 'runzhouzhu/week7_inclass_test1'
             // Define Docker image tag
             DOCKER_IMAGE_TAG = 'week1'
         }
