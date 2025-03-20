@@ -1,7 +1,4 @@
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.ResourceBundle;
-import java.util.Scanner;
+import java.util.*;
 
 public class ShoppingCartCalculator {
     // Method to calculate the total cost
@@ -24,7 +21,12 @@ public class ShoppingCartCalculator {
         System.out.println("4. Japanese");
 
         Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
+        int choice = 0;
+        if (scanner.hasNextInt()) {
+            choice = scanner.nextInt();
+        } else {
+            System.out.println("Please enter a valid option!");
+        }
         Locale locale = switch (choice) {
             case 1 -> new Locale.Builder().setLanguage("en").setRegion("US").build();
             case 2 -> new Locale.Builder().setLanguage("sv").setRegion("SE").build();
