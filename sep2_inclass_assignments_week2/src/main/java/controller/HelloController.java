@@ -53,7 +53,7 @@ public class HelloController {
             System.out.println("Formatted BMI: " + consumptionString);
 
             // Directly concatenate the BMI value to the result message
-            lblResult.setText(rb.getString("result") + " " + consumptionString);
+            lblResult.setText(rb.getString("result") + " " + consumptionString + " L/100km");
 
         } catch (NumberFormatException e) {
             // Handle invalid input
