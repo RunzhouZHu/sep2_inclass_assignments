@@ -14,6 +14,7 @@ public class View extends Application {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Runzhou Zhu week3 inclass assignments");
         stage.show();
     }
 
