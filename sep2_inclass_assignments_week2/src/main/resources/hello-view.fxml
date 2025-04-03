@@ -15,6 +15,7 @@
         <TextField fx:id="txtFuel"/>
         <Button fx:id="btnCalculate" onAction="#onCalculateClick"/>
         <Label fx:id="lblResult"/>
+        <Label fx:id="localTime"/>
         <Button text="EN!" onAction="#onENClick"/>
         <Button text="FR!" onAction="#onFRClick"/>
         <Button text="JP!" onAction="#onJPClick"/>

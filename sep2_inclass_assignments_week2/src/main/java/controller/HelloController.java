@@ -7,6 +7,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.text.DecimalFormat;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
@@ -19,11 +23,14 @@ public class HelloController {
     @FXML private Button btnCalculate;
     @FXML private TextField txtDistance;
     @FXML private TextField txtFuel;
+    @FXML private Label localTime;
 
     ResourceBundle rb;
 
     public void initialize() {
         setLanguage(new Locale.Builder().setLanguage("en").setRegion("US").build());
+
+        setLocalTime(localTime, ZonedDateTime.now());
     }
 
 
@@ -63,18 +70,28 @@ public class HelloController {
 
     public void onENClick(ActionEvent event) {
         setLanguage(new Locale.Builder().setLanguage("en").setRegion("US").build());
+        setLocalTime(localTime, ZonedDateTime.now(ZoneId.of("America/New_York")));
     }
 
     public void onFRClick(ActionEvent event) {
         setLanguage(new Locale.Builder().setLanguage("fr").setRegion("FR").build());
+        setLocalTime(localTime, ZonedDateTime.now(ZoneId.of("Europe/Paris")));
     }
 
     public void onJPClick(ActionEvent event) {
         setLanguage(new Locale.Builder().setLanguage("ja").setRegion("JP").build());
+        setLocalTime(localTime, ZonedDateTime.now(ZoneId.of("Asia/Tokyo")));
     }
 
     public void onIRClick(ActionEvent event) {
         setLanguage(new Locale.Builder().setLanguage("fa").setRegion("IR").build());
+        setLocalTime(localTime, ZonedDateTime.now(ZoneId.of("Asia/Dubai")));
+    }
+
+    private void setLocalTime(Label label, ZonedDateTime zonedDateTime) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String formattedTime = zonedDateTime.format(formatter);
+        label.setText(formattedTime);
     }
 
     private void setLanguage(Locale locale) {
