@@ -9,7 +9,7 @@ pipeline {
         SONARQUBE_SERVER = 'SonarQubeServers'  // The name of the SonarQube server configured in Jenkins
         SONAR_TOKEN = 'squ_2803d6e93e1cffca744a6b7632e632ef548adfdc' // Store the token securely
         DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub' // Define Docker Hub credentials ID
-        DOCKERHUB_REPO = 'runzhouzhu/week7_inclass_test1' // Define Docker Hub repository name
+        DOCKERHUB_REPO = 'runzhouzhu/runzhouzhu_docker_repo' // Define Docker Hub repository name
         DOCKER_IMAGE_TAG = 'sep2_inclass_assignments_week5' // Define Docker image tag
     }
 
